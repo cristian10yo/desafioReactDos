@@ -1,6 +1,6 @@
 function ItemListCointainer (props){
     return(
-<div>greeting: {props.greeting}</div>
+<div>Greeting: {props.greeting}</div>
     )
 }
 
