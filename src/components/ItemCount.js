@@ -2,7 +2,7 @@ import React from "react"
 
 function ItemCount (){
 
-    const [clickCount,setClickCount] = React.useState (0)
+    const [clickCount,setClickCount] = React.useState (1)
 
     function handleClick (){
     setClickCount (clickCount+1)
