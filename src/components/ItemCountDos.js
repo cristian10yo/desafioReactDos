@@ -1,8 +1,8 @@
 import React from "react"
 
-function ItemCount (){
+function ItemCountDos (){
 
-    const [clickCount,setClickCount] = React.useState (1)
+    const [clickCount,setClickCount] = React.useState (0)
 
     function handleClick (){
     setClickCount (clickCount+1)
@@ -17,4 +17,4 @@ function ItemCount (){
     )
 };
 
-export default ItemCount;
+export default ItemCountDos;
