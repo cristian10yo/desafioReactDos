@@ -1,7 +1,8 @@
 /*import logo from './logo.svg';*/
 import './App.css';
 import ItemCountDos from './components/ItemCountDos';
-import ItemListCointainer from './components/itemListCointainer';
+import ItemDetailCointainer from './components/ItemDetailContainer/ItemDetailContainer';
+
 import NavBar from './components/NavBar/NavBar';
 
 
@@ -13,8 +14,9 @@ function App() {
         
         <NavBar tituloNav="FALSYCOMMERCE"/>
       </header>
-      <ItemListCointainer greeting = "Bienvenido a la FalsyTienda" />
-      <ItemCountDos/>
+      {/*<ItemListContainer greeting = "Bienvenido a la FalsyTienda" />*/}
+      <ItemDetailCointainer/>
+      {/*<ItemCountDos/>*/}
     </div>
   );
 }
