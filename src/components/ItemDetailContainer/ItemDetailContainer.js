@@ -1,19 +1,18 @@
 import React,{useEffect, useState} from "react"
 import ItemDetail from "../ItemDetail/ItemDetail";
-
-
 import { getSingleItem } from "../MockData";
+import {useParams} from "react-router-dom"
 
 
 function ItemDetailContainer(){
     let [data,setData] = useState({})
-    
-    useEffect (
-        ()=>{
-        getSingleItem().then ((respuestaDatos)=>setData (respuestaDatos) );
+    const {id} =useParams();
+
+    useEffect (()=>{
+        getSingleItem(id).then ((respuestaDatos)=>setData (respuestaDatos) );
        
         },
-        []
+        [id]
         );
     
     return (

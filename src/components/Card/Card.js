@@ -1,8 +1,9 @@
-import "./styleItemDetail.css"
+import "./styleCard.css"
 import {Link} from "react-router-dom";
 
-function ItemDetail (props){
-    let {price,title,img,detail}=props;
+function Card(props){
+    let {price,title,img,detail,id}=props;
+    const urlDetalle= `/detalle/${id}`
     return(
     <div className ="card">
     <div className ="card-img">
@@ -14,11 +15,11 @@ function ItemDetail (props){
     <h4>${price}</h4>
     </div> 
         
-    <Link to="/detalle">
+    <Link to={urlDetalle}>
     <button>Ver mas</button>
     </Link>
     </div>
     )
     }
 
-    export default ItemDetail;
+    export default Card;

@@ -5,19 +5,30 @@ import ItemDetailCointainer from './components/ItemDetailContainer/ItemDetailCon
 
 import NavBar from './components/NavBar/NavBar';
 
+import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
+import ItemListContainer from './components/ItemListContainer';
 
 
 function App() {
   return (
-    <div className="App">
+
+    <BrowserRouter>
+    
       <header className="App-header">
-        
-        <NavBar tituloNav="FALSYCOMMERCE"/>
+      <NavBar tituloNav="FALSYCOMMERCE"/>
       </header>
-      {/*<ItemListContainer greeting = "Bienvenido a la FalsyTienda" />*/}
-      <ItemDetailCointainer/>
+
+      <Routes>
+      
+      <Route path="/" element ={<ItemListContainer greeting = "Bienvenido a la FalsyTienda" />}/>
+      
+      <Route path="/detalle/:id" element ={<ItemDetailCointainer/>}/>
+      
+      <Route path="/categoria/:cat" element={<ItemListContainer/>}/>
       {/*<ItemCountDos/>*/}
-    </div>
+    
+    </Routes>
+    </BrowserRouter>
   );
 }
 
