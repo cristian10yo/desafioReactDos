@@ -35,6 +35,7 @@ const data = [
         img:"/assets/apple.jpg",
         stock:2,
         category: "Microfono",
+        
     }
 ]
 

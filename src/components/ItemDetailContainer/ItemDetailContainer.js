@@ -4,6 +4,7 @@ import { getSingleItem } from "../MockData";
 import {useParams} from "react-router-dom"
 
 
+
 function ItemDetailContainer(){
     let [data,setData] = useState({})
     const {id} =useParams();

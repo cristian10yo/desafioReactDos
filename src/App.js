@@ -1,12 +1,12 @@
 /*import logo from './logo.svg';*/
 import './App.css';
-import ItemCountDos from './components/ItemCountDos';
 import ItemDetailCointainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 import NavBar from './components/NavBar/NavBar';
 
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import ItemListContainer from './components/ItemListContainer';
+import CartVacio from './components/CartVacio';
 
 
 function App() {
@@ -25,6 +25,8 @@ function App() {
       <Route path="/detalle/:id" element ={<ItemDetailCointainer/>}/>
       
       <Route path="/categoria/:cat" element={<ItemListContainer/>}/>
+
+      <Route path="/cart" element={<CartVacio/>}/>
       {/*<ItemCountDos/>*/}
     
     </Routes>
