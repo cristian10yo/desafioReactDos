@@ -1,34 +1,37 @@
+import React, {useState, useContext} from "react";
 import "./styleItemDetail.css"
 import {Link} from "react-router-dom";
 import ItemCount from "../ItemCount";
 import CartVacio from "../CartVacio";
+import { cartContext } from "../../context/cartContext";
 
-function ItemDetail (props){
-    
-    let estadoCart = false;
-    
+
+function ItemDetail ({item}){
+    const [isInCart, setIsInCart] = useState (false);
+  
+    //const {addItem} = useContext (cartContext);
+
     function handleAddToCart(count){
-      alert (`agregaste al carrito ${count}`);
-      {if (estadoCart!==false) {handleCart()}
-      /*agregar funcion para cuando cambie al estado true, del itemdetail*/
+      setIsInCart(true)
+      //addItem (item,count)
+  
     }
 
-    function handleCart (){
-<CartVacio/>}
-    }
-
-    let {price,title,img,detail,stock}=props;
+    //let {price,title,img,detail,stock}=props;*/
     return(
     <div className ="card">
     <div className ="card-img">
-    <img src={img} alt="card img"></img>
+    <img src={item.img} alt="card img"></img>
     </div>
     <div className ="card-detail">
-    <h3>{title}</h3>
-    <p>{detail}</p>
-    <h4>${price}</h4>
-    <p>el stock es:{stock}</p>
-    {estadoCart ===false? <ItemCount stock={props.stock} onAddToCart={handleAddToCart} /> : <button onClick= {handleCart}>finalizar compra</button>}
+    <h3>{item.title}</h3>
+    <p>{item.detail}</p>
+    <h4>${item.price}</h4>
+    <p>el stock es:{item.stock}</p>
+    {
+      (isInCart===false)? <ItemCount stock={item.stock} onAddToCart={handleAddToCart}/>: <p>---</p>
+    }
+    
     </div> 
         
    

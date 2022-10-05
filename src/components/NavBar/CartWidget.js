@@ -5,7 +5,6 @@ import {IoIosAirplane} from "react-icons/io";
 
 
 
-
 function CartWidget (){
 
     const {cart} = useContext(cartContext)

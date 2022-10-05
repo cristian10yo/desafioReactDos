@@ -24,8 +24,7 @@ function ItemDetailContainer(){
           {/*<h1>{data.title}</h1>
           <h2>${data.price}</h2>
           <h3>{data.detail}</h3>
-    <div>{data.img}</div>*/}
-
+    <div>{data.img}</div>
             
                 <ItemDetail
                 key={data.id}
@@ -33,7 +32,8 @@ function ItemDetailContainer(){
                 img={data.img}
                 detail={data.detail}
                 stock={data.stock}
-                />
+                />*/}
+<ItemDetail item={data}/>
             
           
       </div>
