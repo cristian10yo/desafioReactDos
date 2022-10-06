@@ -9,11 +9,11 @@ import { cartContext } from "../../context/cartContext";
 function ItemDetail ({item}){
     const [isInCart, setIsInCart] = useState (false);
   
-    //const {addItem} = useContext (cartContext);
+    const {addItem} = useContext (cartContext);
 
     function handleAddToCart(count){
       setIsInCart(true)
-      //addItem (item,count)
+      addItem (item,count)
   
     }
 
@@ -29,7 +29,7 @@ function ItemDetail ({item}){
     <h4>${item.price}</h4>
     <p>el stock es:{item.stock}</p>
     {
-      (isInCart===false)? <ItemCount stock={item.stock} onAddToCart={handleAddToCart}/>: <p>---</p>
+      (isInCart===false)? <ItemCount stock={item.stock} onAddToCart={handleAddToCart}/>: <Link to="/cart"><button >terminar mi compra</button></Link>
     }
     
     </div> 

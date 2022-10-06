@@ -8,12 +8,12 @@ import {IoIosAirplane} from "react-icons/io";
 
 function CartWidget (){
 
-    const {cart} = useContext(cartContext)
-
+    const {cart} = useContext(cartContext);
+//const {getTotalItemsInCart} =useContext(cartContext)
     return(
 <div>
 "HOLA" <FaBeer /> <IoIosAirplane/>
-<span>{cart.lenght}</span>
+<span>{cart.item}</span>
 </div>
     )
 }
