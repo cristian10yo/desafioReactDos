@@ -2,7 +2,6 @@ import React, {useState, useContext} from "react";
 import "./styleItemDetail.css"
 import {Link} from "react-router-dom";
 import ItemCount from "../ItemCount";
-import CartVacio from "../CartVacio";
 import { cartContext } from "../../context/cartContext";
 
 
@@ -14,6 +13,7 @@ function ItemDetail ({item}){
     function handleAddToCart(count){
       setIsInCart(true)
       addItem (item,count)
+      
   
     }
 
@@ -28,8 +28,10 @@ function ItemDetail ({item}){
     <p>{item.detail}</p>
     <h4>${item.price}</h4>
     <p>el stock es:{item.stock}</p>
-    {
-      (isInCart===false)? <ItemCount stock={item.stock} onAddToCart={handleAddToCart}/>: <Link to="/cart"><button >terminar mi compra</button></Link>
+    {isInCart ? (
+      <Link to="/cart"><button >terminar mi compra</button></Link>
+    ) : (<ItemCount stock={item.stock} onAddToCart={handleAddToCart}/>)
+      
     }
     
     </div> 
@@ -41,3 +43,9 @@ function ItemDetail ({item}){
     }
 
     export default ItemDetail;
+
+    /*
+{
+      (isInCart===false)? <ItemCount stock={item.stock} onAddToCart={handleAddToCart}/>: <Link to="/cart"><button >terminar mi compra</button></Link>
+    }
+    */

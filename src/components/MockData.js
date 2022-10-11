@@ -30,6 +30,7 @@ const data = [
     {
         id:4,
         title:"Auricular Apple",
+        offer: true,
         price:2000,
         detail:"A diferencia de los audífonos circulares tradicionales, el diseño de los EarPods se basa en la geometría del oído, por eso son más cómodos que cualquier otro audífono de este tipo.Las bocinas del interior de los EarPods han sido diseñadas para mejorar la calidad del sonido y minimizar su pérdida. ¿El resultado? Un audio de alta calidad.Los EarPods también incluyen un control remoto integrado en el cable que te permite ajustar el volumen, controlar la reproducción de música y video, y responder o finalizar llamadas",
         img:"/assets/apple.jpg",

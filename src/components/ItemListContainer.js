@@ -3,15 +3,23 @@ import Card from "./Card/Card";
 import {useParams} from "react-router-dom"
 import getMockItems, {getItemsByCategory} from "./MockData";
 
+
+
+
 function ItemListContainer(){
 let [data,setData] = useState([])
+const [isLoading, setIsLoading] = useState (true)
 const {cat} = useParams()
 
 useEffect (()=>{
+    setData ([]);
+    setIsLoading (true);
         if (cat=== undefined){
-    getMockItems().then ((respuestaDatos)=>setData (respuestaDatos) );
+    getMockItems().then ((respuestaDatos)=>setData (respuestaDatos) )
+    .finally (() => setIsLoading (false));
         } else{
-    getItemsByCategory(cat).then ((respuestaDatos)=>setData (respuestaDatos) );
+    getItemsByCategory(cat).then ((respuestaDatos)=>setData (respuestaDatos) )
+    .finally (() => setIsLoading (false))
         }
     },
     [cat]
@@ -19,6 +27,8 @@ useEffect (()=>{
 
 return (
     <div>
+{isLoading && <h3>Cargando...</h3>}
+
      <div className="main container">
       {data.map((item)=>{
         return(

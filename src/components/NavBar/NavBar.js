@@ -4,12 +4,12 @@ import{Link} from "react-router-dom";
 import CartWidget from "../../CartWidget";
 
 
-
 function NavBar (props){
     
     return(
+
     <div className="div-nav-bar">
-<h1 className="titulo-nav-bar"> <CartWidget/> {props.tituloNav}</h1>
+<h1 className="titulo-nav-bar">{props.tituloNav}</h1>
 <ul>
 
     <Link to="/"><li>Inicio</li></Link>
@@ -21,6 +21,7 @@ function NavBar (props){
     <Link to="/categoria/Microfono"><li>Auriculares con Microfono</li></Link>
 </ul>
 
+<CartWidget/>
 
     </div>
     
