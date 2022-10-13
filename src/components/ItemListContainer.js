@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from "react";
 import Card from "./Card/Card";
 import {useParams} from "react-router-dom"
-import getMockItems, {getItemsByCategory} from "./MockData";
+import {getMockItems, getItemsByCategory} from "../services/firestore";
 
 
 

@@ -1,8 +1,8 @@
-import React,{useEffect, useState} from "react"
+import React,{useEffect, useState} from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getSingleItem } from "../MockData";
-import {useParams} from "react-router-dom"
-import { Waveform } from '@uiball/loaders'
+import { getSingleItem } from "../../services/firestore";
+import {useParams} from "react-router-dom";
+import { Waveform } from '@uiball/loaders';
 
 
 function ItemDetailContainer(){
