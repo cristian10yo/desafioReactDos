@@ -38,6 +38,12 @@ function getTotalItemsInCart (count){
     
 }
 
+function getTotalPrice (){
+    let totalPrice = 0
+    cart.forEach (item => totalPrice += item.price*item.count);
+    return totalPrice;
+}
+
 function isInCart (id){
     let found = cart.some ((item) => item.id === id)
     return found;
@@ -49,7 +55,7 @@ function removeAll (){
 
     //pasamos el objeto value a los componentes hijos
     return (
-        <cartContext.Provider value = {{cart, addItem, isInCart, getTotalItemsInCart, removeAll }}>
+        <cartContext.Provider value = {{cart, addItem, isInCart, getTotalItemsInCart, removeAll, getTotalPrice }}>
             {children}
             </cartContext.Provider>
     );

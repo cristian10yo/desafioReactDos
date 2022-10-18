@@ -1,18 +1,22 @@
 /*import logo from './logo.svg';*/
 import './App.css';
 import ItemDetailCointainer from './components/ItemDetailContainer/ItemDetailContainer';
-import NavBar from './components/NavBar/NavBar';
-import CartWidget from './CartWidget';
-import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import ItemListContainer from './components/ItemListContainer';
+import NavBar from './components/NavBar/NavBar';
+import {BrowserRouter,Routes,Route,} from "react-router-dom";
 //4 importar y renderizar el Provider
 import CartContextProvider from './context/cartContext';
 import CartView from './components/CartView';
+import Checkout from './components/Checkout/Checkout';
+import { exportDataToFirestore } from './services/firestore';
 
 
 function App() {
+exportDataToFirestore ();
+
   return (
 <CartContextProvider>
+  <button onClick={exportDataToFirestore}>Enviar datos al firestore</button>
     <BrowserRouter>
     
       <header className="App-header">
@@ -31,6 +35,8 @@ function App() {
 
       <Route path="/cart" element={<CartView/>}/>
       
+      
+      <Route path="/checkout/:orderid" element={<Checkout />} />
     
     </Routes>
     </BrowserRouter>
