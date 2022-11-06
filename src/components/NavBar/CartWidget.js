@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { cartContext } from "../context/cartContext";
 import { FaBeer } from 'react-icons/fa';
 import {IoIosAirplane} from "react-icons/io";
-
-
+import { cartContext } from "../../context/cartContext";
+import "./cartWidget.css";
 
 function CartWidget (){
 
@@ -12,11 +11,11 @@ function CartWidget (){
     /*const {cart} = useContext(cartContext);*/
 
     return(
-<div>
+<div className="cartClass">
     <p>
-"HOLA soy el CartWidget" <FaBeer /> <IoIosAirplane/>
+"HOLA soy el CartWidget"  <IoIosAirplane/><IoIosAirplane/><IoIosAirplane/><IoIosAirplane/><FaBeer /> 
 </p>
-<span>{getTotalItemsInCart()}</span>
+<span>EL TOTAL DE TUS ITEMS EN EL CARRITO ES DE: {getTotalItemsInCart()}</span>
 </div>
     )
 }

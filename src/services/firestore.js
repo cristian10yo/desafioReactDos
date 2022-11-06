@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"; //aplicacion general
-import {getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc} from "firebase/firestore"
+import {getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc} from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDbR25myx8dLAGJQKhkjbgcprMym9Me7Q4",
@@ -18,7 +18,7 @@ export async function getMockItems (){
     let snapshotDB= await getDocs (collectionRef);
 
     let dataDocs= snapshotDB.docs.map ((documento) => {
-      let docFormateado = {...documento.data(),id:documento.id};
+    let docFormateado = {...documento.data(),id:documento.id};
     return  docFormateado;
 
     });
@@ -52,11 +52,13 @@ export async function createBuyOrder (orderData){
 
 }
 
-export async function exportDataToFirestore (){
+// FUNCIÓN PARA CARGAR LOS PRODUCTOS A LA BASE DE DATOS DE FIREBASE
+
+/*export async function exportDataToFirestore (){
   
 const data = [
   {
-      id: 1,
+      
       title: "Auricular Sony",
       price: 2500,
       detail: "Sony, sin lugar a dudas es una de las marcas más reconocidas en el mundo por la fabricación de dispositivos de audio. Su gama de auriculares se caracteriza por brindar siempre una gran experencia de uso en sus usuarios y ofrecer una alta calidad en todos los componentes de sus reproductores. Esto hace que puedas notar un gran sonido desde su primer uso.",
@@ -65,7 +67,7 @@ const data = [
       category: "Bluetooth",
   },
   {
-      id: 2,
+      
       title: "Auricular Razer",
       price: 3500,
       detail: "¡Experimentá la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida. Con los auriculares Razer no te perdés ningún detalle y escuchás el audio tal y como fue diseñado por los creadores.",
@@ -74,7 +76,7 @@ const data = [
       category: "Gamer",
   },
   {
-      id: 3,
+      
       title: "Auricular Philips",
       price: 1700,
       detail: "En la calle, en el colectivo o en la oficina, tené siempre a mano tus auriculares Philips y ¡escapate de la rutina por un rato! Vas a poder disfrutar de la música que más te gusta y de tus podcasts favoritos cuando quieras y donde quieras.",
@@ -83,7 +85,7 @@ const data = [
       category: "Bluetooth",
   },
   {
-      id:4,
+      
       title:"Auricular Apple",
       offer: true,
       price:2000,
@@ -101,6 +103,6 @@ for (let item of data){
   const newDoc = await addDoc (collectionRef, item);
 }
 }
-
+*/
   export default firestore;
   

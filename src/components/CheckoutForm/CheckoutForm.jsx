@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
-import Button from "../Button/Button";
 import { createBuyOrder } from "../../services/firestore";
+
 
 function CheckoutForm() {
   const [dataForm, setDataForm] = useState({
@@ -14,12 +14,12 @@ function CheckoutForm() {
 
   const navigate = useNavigate();
   const context = useContext(cartContext);
-  const {cart,removeAll,getTotalItemsInCart,getTotalPrice} = context;
+  const {cart,removeAll,getTotalPrice} = context;
   
 
-  function handleCheckout() {
-    
-    /* { buyer: { name, phone, email }, items: [{id, title, price}], total  } */
+
+  function handleCheckout(event) {
+    event.preventDefault();
     const orderData = {
       buyer: dataForm,
       items: cart,
