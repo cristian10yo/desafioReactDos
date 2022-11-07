@@ -9,7 +9,7 @@ function CartView(){
     //const {cartruta} =useParams();
     
     //const {cart} = context;
-    const {cart,getTotalItemsInCart,getTotalPrice} = useContext (cartContext)
+    const {cart,getTotalItemsInCart,getTotalPrice,eliminarProducto} = useContext (cartContext)
 
 let carritoVacio = cart.length === 0;
 
@@ -32,6 +32,7 @@ return (
         <h4>Nombre del Producto:{item.title}</h4>
         <p>El precio es:{item.price}</p>
         <p>La cantidad de {item.title} es :{item.count}</p>
+        <button onClick= {eliminarProducto}>eliminar producto</button>
         </div>
 )})}
         </h3>

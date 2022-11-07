@@ -53,9 +53,15 @@ function removeAll (){
    setCart ([])
 }
 
+function eliminarProducto (item,count){
+    let newCart = cart.map ((item)=>item);
+    newCart.shift ({...item, count:count});
+    setCart(newCart);
+}
+
     //pasamos el objeto value a los componentes hijos
     return (
-        <cartContext.Provider value = {{cart, addItem, isInCart, getTotalItemsInCart, removeAll, getTotalPrice }}>
+        <cartContext.Provider value = {{cart, addItem, isInCart, getTotalItemsInCart, removeAll, getTotalPrice,eliminarProducto }}>
             {children}
             </cartContext.Provider>
     );

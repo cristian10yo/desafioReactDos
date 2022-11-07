@@ -22,5 +22,7 @@ Nociones de HTML, CSS, JavaScript
 
 
 -El codigo del proyecto se encuentra en GITHUB a través del siguiente link:
+https://github.com/cristian10yo/desafioReactDos/tree/main
 
--Agregar enlace con Deploy en Netlify:
+-Enlace con Deploy en Netlify:
+https://loquacious-pothos-e1b703.netlify.app
